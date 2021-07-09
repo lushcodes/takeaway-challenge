@@ -14,7 +14,7 @@ class Menu
 
           def initialize
           @menu = MEALS
-          end
-
           
+          
+          end
 end
