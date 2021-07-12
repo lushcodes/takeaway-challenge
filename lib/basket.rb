@@ -1,6 +1,7 @@
 class Basket
- attr_accessor :order_list
+ attr_accessor :order_list, :total
   def initialize
-    @order_list = []
+    @order_list = {}
+    @total = 0.00
   end
 end

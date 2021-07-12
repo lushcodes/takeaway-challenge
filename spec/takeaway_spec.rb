@@ -11,13 +11,14 @@ describe Takeaway do
 
   describe '#show_menu' do
     it { is_expected.to respond_to :show_menu }
+
+    it 'shows the menu' do
+      expect(subject.show_menu).to eq(Menu::MEALS)
+    end
   end
 
-  it 'shows the menu' do
-    expect(subject.show_menu).to eq(Menu::MEALS)
-  end
+  describe '#add_item' do
+    it { is_expected.to respond_to :add_item }
 
-  describe '#user_selection' do
-    it { is_expected.to respond_to(:user_selection).with(1).argument }
-end
+  end
 end

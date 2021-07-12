@@ -13,40 +13,25 @@ class Takeaway
   puts "Welcome to the Cakeaway! Please select an option!"
   end
 
-  def user_choice
-    puts "1. Show menu"
-    puts "2. Add menu item to basket"
-    puts "3. Checkout"
-    selection = gets.chomp
-  end
-
   def show_menu
-  Menu::MEALS
+  @menu.menu_list
   end
 
   def add_item(item)
-   
+    if @menu.menu_list.key?(item.keys[0])
+      if @basket.order_list.key?(item)
+        @basket.order_list[item] += 1
+      else
+        @basket.order_list[item] = 1
+      end
+    end
   end
 
   def checkout
-
+    @basket.order_list.each do |key, value|
+      cost = key[key.keys[0]]
+      @basket.total += (cost * value)
+    end
   end
-  
-
-  def user_selection(selection)
-  case selection
-    when "1"
-      puts "Option 1 selected."
-     show_menu
-    when "2"
-      puts "Option 2 selected."
-      add_item
-    when "3"
-      puts "Option 3 selected."
-      checkout
-    else
-      puts "I don't know what you meant, try again"
-  end
-end
 end
 

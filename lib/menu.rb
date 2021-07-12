@@ -11,8 +11,6 @@ attr_reader :menu_list
               "Coffee"                  => 2.25,
           }
 
-          attr_reader :menu
-
           def initialize
           @menu_list = MEALS
           
