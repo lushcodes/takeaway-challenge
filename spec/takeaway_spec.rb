@@ -1,5 +1,4 @@
 require 'takeaway'
-
 describe Takeaway do
   let(:menu) {Menu.new}
   it 'creates a menu by default' do
@@ -14,7 +13,11 @@ describe Takeaway do
     it { is_expected.to respond_to :show_menu }
   end
 
+  it 'shows the menu' do
+    expect(subject.show_menu).to eq(Menu::MEALS)
+  end
+
   describe '#user_selection' do
     it { is_expected.to respond_to(:user_selection).with(1).argument }
-  end
+end
 end

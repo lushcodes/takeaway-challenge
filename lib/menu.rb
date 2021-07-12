@@ -1,4 +1,5 @@
 class Menu
+attr_reader :menu_list
 
   MEALS = {   "Carrot Cake"             => 3.50,
               "Lemon Drizzle Cake"      => 3.00,
@@ -13,7 +14,7 @@ class Menu
           attr_reader :menu
 
           def initialize
-          @menu = MEALS
+          @menu_list = MEALS
           
           
           end

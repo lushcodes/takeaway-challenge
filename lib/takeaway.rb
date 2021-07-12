@@ -1,5 +1,5 @@
 require_relative 'menu'
-
+require_relative 'basket'
 class Takeaway
   
   attr_reader :menu, :basket
@@ -13,11 +13,25 @@ class Takeaway
   puts "Welcome to the Cakeaway! Please select an option!"
   end
 
-  def show_menu
+  def user_choice
     puts "1. Show menu"
     puts "2. Add menu item to basket"
     puts "3. Checkout"
+    selection = gets.chomp
   end
+
+  def show_menu
+  Menu::MEALS
+  end
+
+  def add_item(item)
+   
+  end
+
+  def checkout
+
+  end
+  
 
   def user_selection(selection)
   case selection
@@ -35,3 +49,4 @@ class Takeaway
   end
 end
 end
+
